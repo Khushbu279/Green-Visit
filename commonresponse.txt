@@ -1,0 +1,87 @@
+
+    private Api restcall;
+    EditText name;
+    EditText id;
+    Button butt;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        name = (EditText) findViewById(R.id.name);
+        id = (EditText) findViewById(R.id.id);
+        butt = (Button) findViewById(R.id.butt);
+    }
+
+
+    private void ADD_STUDENT
+
+    {
+        restcall.ADD_STUDENT("add_student", name, id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Subscriber<Commonresponse>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(final Throwable e) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+
+                    @Override
+                    public void onNext(final Commonresponse commonResponse) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (commonResponse.getStatus() == 200) {
+
+                                    Toast.makeText(MainActivity.this, "Data Insert", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                });
+
+    }
+
+    private void SELECT_STUDENT
+
+    {
+        restcall.SELECT_STUDENT("Select student", "", "").subscribeOn(Schedulers.io()).observeOn(Schedulers.newThread()).subscribe(new Subscriber<student_details>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(student_details student_details) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+
+                    }
+                });
+            }
+        });
+
+    }
+}
+
+

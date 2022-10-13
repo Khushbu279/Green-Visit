@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.PopupOverlay"
+   android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/forest_info"
+            android:textSize="40sp"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/ttk"
+        android:textStyle="bold"
+        android:drawableTop="@drawable/ic_lightbulb_outline_black_24dp"
+        android:drawablePadding="-20dp"
+        />
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@+id/bt1"
+       android:text="@string/vp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/ic_remove_red_eye_black_24dp"
+        android:drawablePadding="-20dp"
+        />
+    <Button
+        android:id="@+id/bt3"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/bt1"
+        android:text="@string/Fire"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:drawableTop="@drawable/ic_whatshot_black_24dp"
+        android:drawablePadding="-20dp"
+        />
+    <Button
+        android:id="@+id/bt4"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_toRightOf="@+id/bt3"
+        android:layout_below="@+id/bt2"
+        android:text="@string/Activity"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/ic_accessibility_black_24dp"
+        android:drawablePadding="-20dp"
+        />
+    <Button
+        android:id="@+id/bt5"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/bt3"
+        android:text="@string/near_me"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/ic_place_black_24dp"
+        android:drawablePadding="-20dp"/>
+    <Button
+        android:id="@+id/bt6"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/bt4"
+        android:layout_toRightOf="@+id/bt3"
+        android:text="@string/maps"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/maps"
+        android:drawablePadding="-20dp"/>
+    <Button
+        android:id="@+id/bt7"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/bt6"
+        android:text="@string/news"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/news"
+        android:drawablePadding="-20dp"/>
+    <Button
+        android:id="@+id/bt8"
+        android:layout_width="205dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/bt6"
+        android:layout_toRightOf="@+id/bt7"
+        android:text="@string/About"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:drawableTop="@drawable/about"
+        android:drawablePadding="-20dp"/>
+
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+text3=(TextView)findViewById(R.id.text3);
+        bt1=(Button)findViewById(R.id.bt1);
+        bt2=(Button)findViewById(R.id.bt2);
+        bt3=(Button)findViewById(R.id.bt3);
+        bt4=(Button)findViewById(R.id.bt4);
+        bt5=(Button)findViewById(R.id.bt5);
+        bt6=(Button)findViewById(R.id.bt6);
+        bt7=(Button)findViewById(R.id.bt7);
+        bt8=(Button)findViewById(R.id.bt8);
+
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(home.this,things_to_know.class);
+                startActivity(intent);
+            }
+        });
+
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1=new Intent(home.this,viewing_part.class);
+                startActivity(intent1);
+            }
+        });
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(home.this,fire.class);
+                startActivity(intent2);
+            }
+        });
+
+        bt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3=new Intent(home.this,Activity.class);
+                startActivity(intent3);
+            }
+        });
+
+        bt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent4=new Intent(home.this,maps.class);
+                startActivity(intent4);
+            }
+        });
+
+        bt7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent5=new Intent(home.this,news.class);
+                startActivity(intent5);
+            }
+        });
+
+        bt8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6=new Intent(home.this,about.class);
+                startActivity(intent6);
+            }
+        });
+    }
+
+
+
+
+TextView text3;
+    Button  bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8;
